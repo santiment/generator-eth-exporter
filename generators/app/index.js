@@ -37,7 +37,7 @@ module.exports = class extends Generator {
       );
     });
 
-    ["index.js", "Dockerfile", "docker-compose.yaml", ".dockerignore"].forEach(file => {
+    ["package-lock.json", "index.js", "Dockerfile", "docker-compose.yaml", ".dockerignore"].forEach(file => {
       this.fs.copy(this.templatePath(file), this.destinationPath(file));
     });
   }
@@ -46,8 +46,8 @@ module.exports = class extends Generator {
     this.log("Running the default extractor");
     this.log(`Make sure you have ${chalk.red("docker")} and ${chalk.red("docker-compose")} installed so that you can run the exporter!`)
     this.log(`Running the exporter the ${chalk.red("docker-compose up --build")}...`)
-    this.spawnCommand("docker-compose", ["build"]);
-    this.spawnCommand("docker-compose", ["run", "exporter", "npm", "install"]);
-    this.spawnCommand("docker-compose", ["up"]);
+    this.spawnCommandSync("docker-compose", ["build"]);
+    this.spawnCommandSync("docker-compose", ["run", "--no-deps", "exporter", "npm", "install"]);
+    this.spawnCommandSync("docker-compose", ["up", "--build"]);
   }
 };
