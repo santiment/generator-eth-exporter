@@ -4,6 +4,8 @@ services:
     image: wurstmeister/zookeeper
     ports:
       - "2181:2181"
+    logging:
+      driver: none
   kafka:
     image: wurstmeister/kafka
     ports:
@@ -13,6 +15,8 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+    logging:
+      driver: none
     depends_on:
       - zookeeper
   exporter:

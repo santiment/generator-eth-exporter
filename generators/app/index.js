@@ -9,7 +9,7 @@ module.exports = class extends Generator {
   prompting() {
     // Have Yeoman greet the user.
     this.log(
-      yosay(`Welcome to the ${chalk.red('generator-eth-exporter')} project generator!`)
+      yosay(`Welcome to the ${chalk.red('eth-exporter')} project generator!`)
     );
 
     const prompts = [
@@ -37,20 +37,17 @@ module.exports = class extends Generator {
       );
     });
 
-
-    this.fs.copyTpl(
-      this.templatePath('Jenkinsfile'),
-      this.destinationPath('Jenkinsfile'),
-      { project_name: this.props.project_name }
-    );
-
-    ["package-lock.json", "index.js", "Dockerfile", "docker-compose.yaml"].forEach(file => {
+    ["index.js", "Dockerfile", "docker-compose.yaml", ".gitignore", ".dockerignore"].forEach(file => {
       this.fs.copy(this.templatePath(file), this.destinationPath(file));
     });
   }
 
   install() {
     this.log("Running the default extractor");
-    this.spawnCommand("docker-compose", ["up", "--build"]);
+    this.log(`Make sure you have ${chalk.red("docker")} and ${chalk.red("docker-compose")} installed so that you can run the exporter!`)
+    this.log(`Running the exporter the ${chalk.red("docker-compose up --build")}...`)
+    this.spawnCommand("docker-compose", ["build"]);
+    this.spawnCommand("docker-compose", ["run", "exporter", "npm", "install"]);
+    this.spawnCommand("docker-compose", ["up"]);
   }
 };
