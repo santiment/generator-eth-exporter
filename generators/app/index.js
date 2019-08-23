@@ -37,7 +37,7 @@ module.exports = class extends Generator {
       );
     });
 
-    ["index.js", "Dockerfile", "docker-compose.yaml", ".gitignore", ".dockerignore"].forEach(file => {
+    ["index.js", "Dockerfile", "docker-compose.yaml", ".dockerignore"].forEach(file => {
       this.fs.copy(this.templatePath(file), this.destinationPath(file));
     });
   }
