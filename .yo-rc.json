@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Valentin Mihov",
+      "authorEmail": "valentin.mihov@gmail.com",
+      "authorUrl": "https://santiment.net"
+    }
+  }
+}

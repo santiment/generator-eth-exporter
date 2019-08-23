@@ -1,0 +1,19 @@
+{
+  "name": "<%= project_name %>",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "ethereum",
+    "santiment",
+    "extractor"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "eth-exporter": "git+https://github.com/santiment/eth-exporter.git",
+    "web3": "^1.2.1"
+  }
+}
