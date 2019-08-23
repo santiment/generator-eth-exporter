@@ -1,6 +1,6 @@
 {
   "name": "generator-eth-exporter",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A Yeoman generator for eth-exporter pipelines",
   "homepage": "https://github.com/santiment/generator-eth-exporter",
   "author": {
