@@ -7,7 +7,7 @@ First, install [Yeoman](http://yeoman.io) and generator-eth-exporter using [npm]
 
 ```bash
 npm install -g yo
-npm install -g generator-eth-exporter
+npm install -g @santiment-network/generator-eth-exporter
 ```
 
 Then generate your new project:
