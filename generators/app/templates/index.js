@@ -1,4 +1,4 @@
-const { ETHExporter } = require('eth-exporter')
+const { ETHExporter } = require('@santiment-network/eth-exporter')
 
 const exporter = new ETHExporter("erc20-transfers")
 
