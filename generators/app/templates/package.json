@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.15",
-    "@santiment-network/san-exporter": "0.0.5",
+    "@santiment-network/eth-exporter": "0.1.1",
     "web3": "^1.2.1"
   }
 }
