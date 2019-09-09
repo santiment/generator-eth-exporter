@@ -19,6 +19,14 @@ services:
       driver: none
     depends_on:
       - zookeeper
+  clickhouse:
+    image: yandex/clickhouse-server
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./clickhouse_init.d:/docker-entrypoint-initdb.d
+    depends_on:
+      - kafka
   exporter:
     build: .
     volumes:
@@ -27,6 +35,7 @@ services:
       KAFKA_URL: kafka:9092
       ZOOKEEPER_URL: zookeeper:2181
       PARITY_URL: ws://parity-parity.default.svc.cluster.local:8546
+      KAFKA_TOPIC: eth_exporter_events
       START_BLOCK: 5000000
     depends_on:
       - kafka
