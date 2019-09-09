@@ -42,7 +42,8 @@ module.exports = class extends Generator {
       "Dockerfile",
       "docker-compose.yaml",
       ".dockerignore",
-      "wait-for-it.sh"
+      "wait-for-it.sh",
+      "clickhouse_init.d/create_tables.sql"
     ].forEach(file => {
       this.fs.copy(this.templatePath(file), this.destinationPath(file));
     });
