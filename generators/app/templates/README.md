@@ -10,6 +10,9 @@ Other useful ENV variables when running this:
 
 * `KAFKA_TOPIC` - the name of the topic in which to export the data. If you change this, don't forget to also change the `create_tables.sql` file and set the name of the correct topic the DB need to read from.
 * `START_BLOCK` - the block from which to start exporting the events
+* `BLOCK_INTERVAL` - the number of blocks that will be exported at the same time. This improves the speed, but could lead to too big data chunks. Reduce the default `100` if you start getting exceptions for too big messages
+* `CONFIRMATIONS` - number of confirmations to ways until the data is exported. An easy way to handle blockchain reorganizations
+* `KAFKA_MESSAGE_MAX_BYTES` - the max size of the batches sent to kafka. The default is 10485760 (10MB)
 
 To run the exporter do:
 

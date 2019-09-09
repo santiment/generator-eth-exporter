@@ -37,9 +37,9 @@ services:
       ZOOKEEPER_URL: zookeeper:2181
       PARITY_URL: ws://parity-parity.default.svc.cluster.local:8546
       KAFKA_TOPIC: eth_exporter_events
-      START_BLOCK: 5000000
+      START_BLOCK: 7700000
       CONFIRMATIONS: 3
-      BLOCK_INTERVAL: 10
+      BLOCK_INTERVAL: 100
     command: ["./wait-for-it.sh", "kafka:9092", "--", "npm", "start"]
     depends_on:
       - kafka

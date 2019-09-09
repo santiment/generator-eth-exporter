@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS events (
   name String
 ) ENGINE = ReplacingMergeTree()
   ORDER BY (name, blockNumber, logIndex)
-  PARTITION ON toYYYYMM(timestamp);
+  PARTITION BY toYYYYMM(timestamp);
 
 CREATE MATERIALIZED VIEW IF NOT EXISTS events_mv TO events
 AS SELECT address,
