@@ -45,8 +45,9 @@ module.exports = class extends Generator {
   install() {
     this.log("Running the default extractor");
     this.log(`Make sure you have ${chalk.red("docker")} and ${chalk.red("docker-compose")} installed so that you can run the exporter!`)
-    this.log(`Running the exporter the ${chalk.red("docker-compose up --build")}...`)
+    this.log(`Building the exporter...`)
     this.spawnCommandSync("docker-compose", ["build"]);
     this.spawnCommandSync("docker-compose", ["run", "--no-deps", "exporter", "npm", "install"]);
+    this.log(`Exporter built. Set the ${chalk.red("PARITY_URL")} in the ${chalk.red("docker-compose.yaml")} file and run the exporter with ${chalk.red("docker-compose up --build")}`)
   }
 };
