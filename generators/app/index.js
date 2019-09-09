@@ -48,6 +48,7 @@ module.exports = class extends Generator {
     this.log(`Building the exporter...`)
     this.spawnCommandSync("docker-compose", ["build"]);
     this.spawnCommandSync("docker-compose", ["run", "--no-deps", "exporter", "npm", "install"]);
+    this.spawnCommandSync("docker-compose", ["build"]);
     this.log(`Exporter built. Set the ${chalk.red("PARITY_URL")} in the ${chalk.red("docker-compose.yaml")} file and run the exporter with ${chalk.red("docker-compose up --build")}`)
   }
 };
