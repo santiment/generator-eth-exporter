@@ -28,7 +28,6 @@ module.exports = class extends Generator {
   }
 
   writing() {
-
     ["package.json", "Jenkinsfile"].forEach(file => {
       this.fs.copyTpl(
         this.templatePath(file),
@@ -37,7 +36,14 @@ module.exports = class extends Generator {
       );
     });
 
-    ["package-lock.json", "index.js", "Dockerfile", "docker-compose.yaml", ".dockerignore"].forEach(file => {
+    [
+      "package-lock.json",
+      "index.js",
+      "Dockerfile",
+      "docker-compose.yaml",
+      ".dockerignore",
+      "wait-for-it.sh"
+    ].forEach(file => {
       this.fs.copy(this.templatePath(file), this.destinationPath(file));
     });
   }

@@ -1,6 +1,6 @@
 {
   "name": "@santiment-network/generator-eth-exporter",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A Yeoman generator for eth-exporter pipelines",
   "homepage": "https://github.com/santiment/generator-eth-exporter",
   "author": {
@@ -36,8 +36,8 @@
     "npm": ">= 4.0.0"
   },
   "dependencies": {
-    "yeoman-generator": "^2.0.1",
     "chalk": "^2.1.0",
+    "yeoman-generator": "^2.0.1",
     "yosay": "^2.0.1"
   },
   "jest": {
