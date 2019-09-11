@@ -44,7 +44,8 @@ module.exports = class extends Generator {
       ".dockerignore",
       "wait-for-it.sh",
       "compound_abi.json",
-      "clickhouse_init.d/create_tables.sql"
+      "clickhouse_init.d/create_tables.sql",
+      "app.js"
     ].forEach(file => {
       this.fs.copy(this.templatePath(file), this.destinationPath(file));
     });

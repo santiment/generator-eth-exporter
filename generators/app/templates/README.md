@@ -29,3 +29,15 @@ $ docker-compose exec clickhouse clickhouse-client
 ```
 
 See the documentation of the DB for details how to run queries: https://clickhouse.yandex/docs/en/
+
+To stop all services run
+
+```
+$ docker-compose stop
+```
+
+To clean all the state and reset run:
+
+```
+$ docker-compose rm
+```
