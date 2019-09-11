@@ -13,7 +13,7 @@ npm install -g @santiment-network/generator-eth-exporter
 Then generate your new project:
 
 ```bash
-yo eth-exporter
+yo @santiment-network/eth-exporter
 ```
 
 ## Getting To Know Yeoman
