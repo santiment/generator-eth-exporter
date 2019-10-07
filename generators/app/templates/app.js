@@ -13,14 +13,14 @@ module.exports = async (request, response) => {
   switch (req.pathname) {
     case '/api/total_events':
       const total_events = await clickhouse.query(
-        "SELECT COUNT(DISTINCT id) as total_events FROM events"
+        "SELECT COUNT(*) as total_events FROM events FINAL"
       ).toPromise()
 
       return send(response, 200, total_events[0])
 
     case '/api/events_over_time':
       const events_over_time = await clickhouse.query(
-        "SELECT toDate(timestamp) as day, COUNT(DISTINCT id) as count FROM events GROUP BY day ORDER BY day"
+        "SELECT toDate(timestamp) as day, COUNT(*) as count FROM events FINAL GROUP BY day ORDER BY day"
       ).toPromise()
 
       return send(response, 200, { "events_over_time": events_over_time })
