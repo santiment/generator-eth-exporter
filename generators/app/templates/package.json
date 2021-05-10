@@ -15,7 +15,7 @@
   "dependencies": {
     "@santiment-network/eth-exporter": "0.1.2",
     "clickhouse": "^1.2.21",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "micro": "^9.3.4",
     "web3": "^1.2.1"
   }
